@@ -130,6 +130,8 @@ public:
     void set_gripper_epm(Gripper_EPM *_gripper_epm) { gripper_epm = _gripper_epm; }
     void set_precland(SIM_Precland *_precland);
 
+    uint8_t get_num_motors() const { return num_motors; }
+
 protected:
     SITL *sitl;
     Location home;

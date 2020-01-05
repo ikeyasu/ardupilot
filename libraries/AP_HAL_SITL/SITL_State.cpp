@@ -449,6 +449,11 @@ void SITL_State::_output_to_flightgear(void)
         for (uint8_t i=0; i<4; i++) {
             fdm.rpm[i] = constrain_float((pwm_output[i]-1000), 0, 1000);
         }
+        if (sitl_model->get_num_motors() == 6) {
+            for (uint8_t i=0; i<2; i++) {
+                fdm.fuel_flow[i] = constrain_float((pwm_output[i]-1000), 0, 1000);
+            }
+        }
     } else {
         fdm.num_engines = 4;
         fdm.rpm[0] = constrain_float((pwm_output[2]-1000)*3, 0, 3000);

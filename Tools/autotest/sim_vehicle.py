@@ -639,7 +639,8 @@ def start_mavproxy(opts, stuff):
         cmd.append("-w")
         cmd.append("mavproxy.exe")
     else:
-        cmd.append("mavproxy.py")
+        cmd.append("pythonw")
+        cmd.append("/Users/ikeyasu/anaconda3/envs/ardupilot/bin/mavproxy.py")
 
     if opts.hil:
         cmd.extend(["--load-module", "HIL"])
